@@ -15,3 +15,4 @@ export const incDecReducer = (state = intialState,{type,payload}) =>{
             return state
     }
 }
+
