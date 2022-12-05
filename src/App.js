@@ -10,13 +10,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-           
+           <a href = "https://reactjs.org/docs/getting-started.html">learn react</a>
       </header> 
-      <p>Count {countValue} </p><br/><br/>
+      <p data-testid="counter">{countValue}</p><br/><br/>
       <div className="App-buttonsDiv">        
-      <input type="button" value='Increment +'style={{width:"100px"}} 
+      <input type="button" data-testid="increment" value='Increment +'style={{width:"100px"}} 
             onClick={()=> {dispatch(incrementValue(countValue+1))}}/>  
-      <input type="button" value='Decrement -'style={{width:"100px",marginLeft:"10px"}}
+      <input type="button" data-testid="decrement" value='Decrement -'style={{width:"100px",marginLeft:"10px"}}
              onClick={()=> {dispatch(decrementValue(countValue-1))}}/>   
       </div>     
     </div>
