@@ -8,18 +8,23 @@ function App() {
   const dispatch = useDispatch();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-           <a href = "https://reactjs.org/docs/getting-started.html">learn react</a>
-      </header> 
-      <p data-testid="count">{countValue}</p><br/><br/>
-      <div className="App-buttonsDiv">        
-      <input type="button" data-testid="increment" value='Increment +'style={{width:"100px"}} 
-            onClick={()=> {dispatch(incrementValue(countValue+1))}}/>  
-      <input type="button" data-testid="decrement" value='Decrement -'style={{width:"100px",marginLeft:"10px"}}
-             onClick={()=> {dispatch(decrementValue(countValue-1))}}/>   
-      </div>     
+      <div>
+            <div className='App-left-header'><img src={logo} className="App-logo" alt="logo" /></div>
+            <div className='App-right-header'>Sample React Count</div>
+            
+           
+      <div className="App-content">
+              <p data-testid="count">{countValue}</p>
+        <div>        
+          <input type="button" data-testid="increment" value='Increment +'style={{width:"100px"}} 
+                onClick={()=> {dispatch(incrementValue(countValue+1))}}/>  
+          <input type="button" data-testid="decrement" value='Decrement -'style={{width:"100px",marginLeft:"10px"}}
+              onClick={()=> {dispatch(decrementValue(countValue-1))}}/>   
+        </div>   
+      </div>
+      <div className="App-footer">samplereactapp.com</div>        
     </div>
+    </div> 
   );
 }
 
