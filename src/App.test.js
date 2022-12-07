@@ -4,18 +4,54 @@ import { Provider, useDispatch } from 'react-redux';
 import store from './redux/store';
 import{incrementValue,decrementValue} from './redux/actions/button-actions';
 
-describe('test increment count / decrement value', () => {
-  render(<Provider store={store}>
-          <App/>
-    </Provider>)
-  var counter = screen.getByTestId("counter");
-  const incrementBtn = screen.getByTestId("increment");
-  fireEvent.click(incrementBtn);
-  const decrementBtn = screen.getByTestId("decrement");
-  fireEvent.click(decrementBtn);
-  it("app intial value " , () =>{
-    expect(counter).toHaveTextContent("0");
+describe('test cases for increment / decrement value', () => {
+
+  beforeEach(() => {
+    render(<Provider store={store}>
+      <App/>
+  </Provider>)
   })
+
+  it("Initial Counter value",() =>{
+      
+  expect(screen.getByTestId("count")).toHaveTextContent("0");
+})
+
+  it("Counter value When Increment Button Clicked",() =>{       
+      const btnDecrement = screen.getByTestId("increment");
+      fireEvent.click(btnDecrement);
+      expect(screen.getByTestId("count")).toHaveTextContent("1");
+  })
+
+  it("Counter value When Increment Button Clicked",() =>{       
+    const btnDecrement = screen.getByTestId("increment");
+    fireEvent.click(btnDecrement);
+    expect(screen.getByTestId("count")).toHaveTextContent("2");
+})
+
+  it("Counter value When Increment Button Clicked",() =>{    
+      const btnDecrement = screen.getByTestId("increment");
+      fireEvent.click(btnDecrement);
+      expect(screen.getByTestId("count")).toHaveTextContent("3");
+})
+
+  it("Counter value When Deccrement Button Clicked",() =>{   
+      const btnDecrement = screen.getByTestId("decrement");
+      fireEvent.click(btnDecrement);
+      expect(screen.getByTestId("count")).toHaveTextContent("2");
+})
+
+it("Counter value When Deccrement Button Clicked",() =>{  
+      const btnDecrement = screen.getByTestId("decrement");
+      fireEvent.click(btnDecrement);
+      expect(screen.getByTestId("count")).toHaveTextContent("1");
+})
+
+it("Counter value When Deccrement Button Clicked",() =>{  
+    const btnDecrement = screen.getByTestId("decrement");
+    fireEvent.click(btnDecrement);
+    expect(screen.getByTestId("count")).toHaveTextContent("0");
+})
   
   
 });

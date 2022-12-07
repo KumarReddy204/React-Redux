@@ -12,7 +12,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
            <a href = "https://reactjs.org/docs/getting-started.html">learn react</a>
       </header> 
-      <p data-testid="counter">{countValue}</p><br/><br/>
+      <p data-testid="count">{countValue}</p><br/><br/>
       <div className="App-buttonsDiv">        
       <input type="button" data-testid="increment" value='Increment +'style={{width:"100px"}} 
             onClick={()=> {dispatch(incrementValue(countValue+1))}}/>  
